@@ -32,13 +32,13 @@ public class UserController {
     private OrderDao orderDao;
 
     @GetMapping("/index")
-    public String demo(){
+    public UserModel demo(){
         HashMap<String, Object> map = new HashMap<>();
         UserModel userModel = userDao.selectById(1);
         OrderModel orderModel = orderDao.selectById(1);
         map.put("userModel",userModel);
         map.put("orderModel",orderModel);
-        return map.toString();
+        return userModel;
     }
 
 }
