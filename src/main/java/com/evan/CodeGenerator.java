@@ -36,7 +36,7 @@ public class CodeGenerator {
         //        .setUsername("root")
         //        .setPassword("root")
         //        .setDriverName("com.mysql.cj.jdbc.Driver");
-        String dbUrl = "jdbc:mysql://127.0.0.1:3306/database1?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true";
+        String dbUrl = "jdbc:mysql://127.0.0.1:3306/database2?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(dbUrl)
