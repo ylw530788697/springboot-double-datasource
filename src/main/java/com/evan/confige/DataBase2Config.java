@@ -1,7 +1,5 @@
 package com.evan.confige;
 
-import com.evan.util.SqlSessionFactoryUtil;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -23,29 +21,29 @@ import javax.sql.DataSource;
  */
 @Configuration
 @MapperScan(basePackages = "com.evan.mapper",sqlSessionFactoryRef = "DataSqlSessionFactory")
-public class DataBase1Config {
-    @Bean(name="database1")
-    @ConfigurationProperties(prefix = "spring.datasource.database1")
-    public DataSource dateSource(){
+public class DataBase2Config {
+    //https://www.cnblogs.com/Donnnnnn/p/12073424.html
+    @Bean(name="database2")
+    @ConfigurationProperties(prefix = "spring.datasource.database2")
+    public DataSource dateSourceTwo(){
         return DataSourceBuilder.create().build();
     }
 
-
-    @Bean(name = "test1SqlSessionFactory")
-    public SqlSessionFactory testSqlSessionFactory(@Qualifier("database1") DataSource dataSource) throws Exception {
+    @Bean(name = "test2SqlSessionFactory")
+    public SqlSessionFactory testSqlSessionFactory(@Qualifier("database2") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:database2/*.xml"));
         return bean.getObject();
     }
 
-    @Bean(name = "test1TransactionManager")
-    public DataSourceTransactionManager testTransactionManager(@Qualifier("database1") DataSource dataSource) {
+    @Bean(name = "test2TransactionManager")
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("database2") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = "test1SqlSessionTemplate")
-    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("test1SqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    @Bean(name = "test2SqlSessionTemplate")
+    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("test2SqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 

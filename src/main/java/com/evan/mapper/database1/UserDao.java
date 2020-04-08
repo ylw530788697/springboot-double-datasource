@@ -1,6 +1,6 @@
-package com.evan.mapper;
+package com.evan.mapper.database1;
 
-import com.evan.model.OrderModel;
+import com.evan.model.UserModel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author EvanYang
  * @since 2020-04-08
  */
-public interface OrderDao extends BaseMapper<OrderModel> {
+public interface UserDao extends BaseMapper<UserModel> {
 
 }
