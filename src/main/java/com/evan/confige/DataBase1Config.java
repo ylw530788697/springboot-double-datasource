@@ -25,6 +25,9 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(basePackages = "com.evan.mapper.database1",sqlSessionFactoryRef = "data1SqlSessionFactory")
 public class DataBase1Config {
+
+    //mapper文件目录
+    private static final String MAPPER_LOCATIONS = "classpath:mapper/database1/*.xml";
     @Bean(name="data1Source")
     @ConfigurationProperties(prefix = "spring.datasource.database1")
     public DataSource dateSource(){
@@ -56,6 +59,12 @@ public class DataBase1Config {
         return bean.getObject();
     }
 
+    //@Bean(name = "druidSqlSessionFactory")
+    //@Primary
+    //public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource masterDataSource) {
+    //    return SqlSessionFactoryUtil.createSqlSessionFactory(masterDataSource,TYPE_ALIASES_PACKAGE,
+    //            TYPE_HANDLERS_PACKAGE,MAPPER_LOCATIONS,mybatisConfig,new Interceptor[] {pageInterceptor});
+    //}
     /**
      * 返回data1数据库的会话模板
      * @param sessionFactory

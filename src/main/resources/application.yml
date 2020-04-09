@@ -15,5 +15,5 @@ spring:
       password: root
       driverClassName: com.mysql.jdbc.Driver
 mybatis-plus:
-  mapper-locations: classpath:/mapper/*/*Mapper.xml
+  mapper-locations: classpath:/mapper/database1/*Mapper.xml,classpath:/mapper/database2/*Mapper.xml
   type-aliases-package: com.evan.model
