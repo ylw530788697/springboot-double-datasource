@@ -2,7 +2,7 @@ package com.evan.controller;
 
 
 import com.evan.mapper.database2.OrderDao;
-import com.evan.mapper.database1.UserDao;
+import com.evan.mapper.database1.UserMapper;
 import com.evan.model.OrderModel;
 import com.evan.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>
@@ -25,7 +26,7 @@ import java.util.HashMap;
 @RequestMapping("/userModel")
 public class UserController {
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     @Autowired
     private OrderDao orderDao;
@@ -33,11 +34,11 @@ public class UserController {
     @GetMapping("/index")
     public UserModel demo(){
         HashMap<String, Object> map = new HashMap<>();
-        UserModel userModel = userDao.selectById(1);
+        List<UserModel> userModels = userMapper.seleteAll();
         OrderModel orderModel = orderDao.selectById(1);
-        map.put("userModel",userModel);
+        map.put("userModel",userModels);
         map.put("orderModel",orderModel);
-        return userModel;
+        return null;
     }
 
 }

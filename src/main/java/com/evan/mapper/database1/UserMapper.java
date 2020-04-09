@@ -3,6 +3,8 @@ package com.evan.mapper.database1;
 import com.evan.model.UserModel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author EvanYang
  * @since 2020-04-08
  */
-public interface UserDao extends BaseMapper<UserModel> {
+public interface UserMapper extends BaseMapper<UserModel> {
+    List<UserModel> seleteAll ();
 
 }
