@@ -36,6 +36,14 @@ public class UserModel extends Model<UserModel> {
     private String phone;
 
 
+    public UserModel(String user, String phone) {
+        this.user = user;
+        this.phone = phone;
+    }
+
+    public UserModel() {
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.id;

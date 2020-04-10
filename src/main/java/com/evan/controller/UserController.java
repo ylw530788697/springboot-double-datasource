@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>
- *  前端控制器
- * </p>
- *
  * @author EvanYang
  * @since 2020-04-08
  */
@@ -46,10 +42,16 @@ public class UserController {
         UserModel userModel = userDao.selectById(1);
         return map;
     }
+
     @GetMapping("/list")
     public List<UserModel> setOrderDao(){
         List<UserModel> userModels = userService.queryUser();
         return userModels;
+    }
+
+    @GetMapping("save")
+    public void save(){
+        userService.saveUserOrder();
     }
 
 }

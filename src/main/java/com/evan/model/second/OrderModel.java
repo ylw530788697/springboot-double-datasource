@@ -37,6 +37,14 @@ public class OrderModel extends Model<OrderModel> {
 
     private String price;
 
+    public OrderModel() {
+    }
+
+    public OrderModel(String tUser, String phone, String price) {
+        this.tUser = tUser;
+        this.phone = phone;
+        this.price = price;
+    }
 
     @Override
     protected Serializable pkVal() {

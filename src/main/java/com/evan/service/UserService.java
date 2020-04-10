@@ -16,4 +16,6 @@ import java.util.List;
 public interface UserService extends IService<UserModel> {
 
     List<UserModel> queryUser();
+
+    void saveUserOrder();
 }
