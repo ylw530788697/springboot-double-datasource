@@ -1,10 +1,10 @@
 package com.evan.controller;
 
 
-import com.evan.mapper.database2.OrderDao;
-import com.evan.mapper.database1.UserMapper;
-import com.evan.model.OrderModel;
-import com.evan.model.UserModel;
+import com.evan.mapper.second.OrderDao;
+import com.evan.mapper.first.UserMapper;
+import com.evan.model.first.UserModel;
+import com.evan.model.second.OrderModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,10 +34,10 @@ public class UserController {
     @GetMapping("/index")
     public String demo(){
         HashMap<String, Object> map = new HashMap<>();
-        //List<UserModel> userModels = userMapper.seleteAll();
-        //OrderModel orderModel = orderDao.selectById(1);
-        //map.put("userModel",userModels);
-        //map.put("orderModel",orderModel);
+        UserModel userModels = userMapper.selectById(1);
+        OrderModel orderModel = orderDao.selectById(1);
+        map.put("userModel",userModels);
+        map.put("orderModel",orderModel);
         UserModel userModel = userMapper.selectById(1);
         return "dddd";
     }

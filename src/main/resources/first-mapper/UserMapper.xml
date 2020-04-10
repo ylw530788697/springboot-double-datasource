@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.evan.mapper.database2.OrderDao">
+<mapper namespace="com.evan.mapper.first.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.evan.model.OrderModel">
+    <resultMap id="BaseResultMap" type="com.evan.model.first.UserModel">
         <id column="id" property="id" />
         <result column="user" property="user" />
         <result column="phone" property="phone" />
-        <result column="price" property="price" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user, phone, price
+        id, user, phone
     </sql>
+
+    <select id="seleteAll">
+        select * from user
+    </select>
 
 </mapper>

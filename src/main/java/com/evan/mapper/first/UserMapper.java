@@ -1,6 +1,6 @@
-package com.evan.mapper.database1;
+package com.evan.mapper.first;
 
-import com.evan.model.UserModel;
+import com.evan.model.first.UserModel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

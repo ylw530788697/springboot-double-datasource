@@ -1,6 +1,6 @@
 package com.evan.service;
 
-import com.evan.model.UserModel;
+import com.evan.model.first.UserModel;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

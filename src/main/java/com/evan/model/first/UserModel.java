@@ -1,4 +1,4 @@
-package com.evan.model;
+package com.evan.model.first;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
