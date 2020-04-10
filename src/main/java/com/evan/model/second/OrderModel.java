@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("order")
+@TableName("t_order")
 @ApiModel(value="OrderModel对象", description="")
 public class OrderModel extends Model<OrderModel> {
 
@@ -31,7 +31,7 @@ public class OrderModel extends Model<OrderModel> {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String user;
+    private String tUser;
 
     private String phone;
 

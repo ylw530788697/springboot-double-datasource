@@ -13,7 +13,7 @@ import java.util.List;
  * @author EvanYang
  * @since 2020-04-08
  */
-public interface UserMapper extends BaseMapper<UserModel> {
+public interface UserDao extends BaseMapper<UserModel> {
     List<UserModel> seleteAll ();
 
 }

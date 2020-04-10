@@ -1,6 +1,6 @@
 package com.evan;
 
-import com.evan.mapper.first.UserMapper;
+import com.evan.mapper.first.UserDao;
 import com.evan.model.first.UserModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,11 +17,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class DemoTest {
     @Autowired
-    private UserMapper userMapper;
+    private UserDao userDao;
     @Test
     public void demoTest(){
-        UserModel userModel = userMapper.selectById(1);
+        UserModel userModel = userDao.selectById(1);
         System.out.println(userModel);
-
     }
 }
